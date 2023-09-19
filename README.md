@@ -1,2 +1,2 @@
 # FoodConnect
-Food Connect is an app created Hackbattle'23 Hackathon
+FoodConnect is an app created for Hackbattle'23 Hackathon
