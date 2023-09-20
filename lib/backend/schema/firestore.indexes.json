@@ -1,0 +1,32 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "donation",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "donerUid",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "dateNeedBack",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "donation",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "recipientUid",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "dateNeedBack",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ]
+}

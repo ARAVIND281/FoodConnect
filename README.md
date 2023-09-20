@@ -1,5 +1,7 @@
+# Food Connect
 
-# FoodConnect
-FoodConnect is an app created for Hackbattle'23 Hackathon
+A new Flutter project.
 
-## screenshot
+## Getting Started
+
+FlutterFlow projects are built to run on the Flutter _stable_ release.
