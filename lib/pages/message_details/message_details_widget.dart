@@ -124,8 +124,8 @@ class _MessageDetailsWidgetState extends State<MessageDetailsWidget> {
                                   ],
                                   gradient: LinearGradient(
                                     colors: [
-                                      FlutterFlowTheme.of(context).primary,
-                                      FlutterFlowTheme.of(context).alternate
+                                      Color(0xFF89D4CF),
+                                      Color(0xFF734AE8)
                                     ],
                                     stops: [0.0, 1.0],
                                     begin: AlignmentDirectional(1.0, -1.0),
@@ -206,8 +206,8 @@ class _MessageDetailsWidgetState extends State<MessageDetailsWidget> {
                                   ],
                                   gradient: LinearGradient(
                                     colors: [
-                                      FlutterFlowTheme.of(context).primary,
-                                      FlutterFlowTheme.of(context).alternate
+                                      Color(0xFF89D4CF),
+                                      Color(0xFF734AE8)
                                     ],
                                     stops: [0.0, 1.0],
                                     begin: AlignmentDirectional(1.0, -1.0),
@@ -298,8 +298,8 @@ class _MessageDetailsWidgetState extends State<MessageDetailsWidget> {
                                   ],
                                   gradient: LinearGradient(
                                     colors: [
-                                      FlutterFlowTheme.of(context).primary,
-                                      FlutterFlowTheme.of(context).alternate
+                                      Color(0xFF89D4CF),
+                                      Color(0xFF734AE8)
                                     ],
                                     stops: [0.0, 1.0],
                                     begin: AlignmentDirectional(1.0, -1.0),
@@ -384,8 +384,8 @@ class _MessageDetailsWidgetState extends State<MessageDetailsWidget> {
                                   ],
                                   gradient: LinearGradient(
                                     colors: [
-                                      FlutterFlowTheme.of(context).primary,
-                                      FlutterFlowTheme.of(context).alternate
+                                      Color(0xFF89D4CF),
+                                      Color(0xFF734AE8)
                                     ],
                                     stops: [0.0, 1.0],
                                     begin: AlignmentDirectional(1.0, -1.0),
@@ -470,8 +470,8 @@ class _MessageDetailsWidgetState extends State<MessageDetailsWidget> {
                                   ],
                                   gradient: LinearGradient(
                                     colors: [
-                                      FlutterFlowTheme.of(context).primary,
-                                      FlutterFlowTheme.of(context).alternate
+                                      Color(0xFF89D4CF),
+                                      Color(0xFF734AE8)
                                     ],
                                     stops: [0.0, 1.0],
                                     begin: AlignmentDirectional(1.0, -1.0),
@@ -552,8 +552,8 @@ class _MessageDetailsWidgetState extends State<MessageDetailsWidget> {
                                   ],
                                   gradient: LinearGradient(
                                     colors: [
-                                      FlutterFlowTheme.of(context).primary,
-                                      FlutterFlowTheme.of(context).alternate
+                                      Color(0xFF89D4CF),
+                                      Color(0xFF734AE8)
                                     ],
                                     stops: [0.0, 1.0],
                                     begin: AlignmentDirectional(1.0, -1.0),

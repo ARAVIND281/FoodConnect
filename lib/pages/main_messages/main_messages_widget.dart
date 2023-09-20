@@ -251,7 +251,11 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget> {
                                           'Donor') {
                                         return StreamBuilder<
                                             List<DonationRecord>>(
-                                          stream: queryDonationRecord(),
+                                          stream: queryDonationRecord(
+                                            queryBuilder: (donationRecord) =>
+                                                donationRecord.where('status',
+                                                    isEqualTo: 'requested'),
+                                          ),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
                                             if (!snapshot.hasData) {
@@ -611,7 +615,15 @@ class _MainMessagesWidgetState extends State<MainMessagesWidget> {
                                               ),
                                             ),
                                             StreamBuilder<List<DonationRecord>>(
-                                              stream: queryDonationRecord(),
+                                              stream: queryDonationRecord(
+                                                queryBuilder: (donationRecord) =>
+                                                    donationRecord.where(
+                                                        'donerUid',
+                                                        isEqualTo:
+                                                            currentUserUid != ''
+                                                                ? currentUserUid
+                                                                : null),
+                                              ),
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
                                                 if (!snapshot.hasData) {

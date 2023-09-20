@@ -81,10 +81,7 @@ class _DonationViewWidgetState extends State<DonationViewWidget> {
                                 )
                               ],
                               gradient: LinearGradient(
-                                colors: [
-                                  FlutterFlowTheme.of(context).primary,
-                                  FlutterFlowTheme.of(context).alternate
-                                ],
+                                colors: [Color(0xFF89D4CF), Color(0xFF734AE8)],
                                 stops: [0.0, 1.0],
                                 begin: AlignmentDirectional(1.0, -1.0),
                                 end: AlignmentDirectional(-1.0, 1.0),
@@ -168,10 +165,7 @@ class _DonationViewWidgetState extends State<DonationViewWidget> {
                                 )
                               ],
                               gradient: LinearGradient(
-                                colors: [
-                                  FlutterFlowTheme.of(context).primary,
-                                  FlutterFlowTheme.of(context).alternate
-                                ],
+                                colors: [Color(0xFF89D4CF), Color(0xFF734AE8)],
                                 stops: [0.0, 1.0],
                                 begin: AlignmentDirectional(1.0, -1.0),
                                 end: AlignmentDirectional(-1.0, 1.0),
@@ -255,10 +249,7 @@ class _DonationViewWidgetState extends State<DonationViewWidget> {
                                 )
                               ],
                               gradient: LinearGradient(
-                                colors: [
-                                  FlutterFlowTheme.of(context).primary,
-                                  FlutterFlowTheme.of(context).alternate
-                                ],
+                                colors: [Color(0xFF89D4CF), Color(0xFF734AE8)],
                                 stops: [0.0, 1.0],
                                 begin: AlignmentDirectional(1.0, -1.0),
                                 end: AlignmentDirectional(-1.0, 1.0),
@@ -342,10 +333,7 @@ class _DonationViewWidgetState extends State<DonationViewWidget> {
                                 )
                               ],
                               gradient: LinearGradient(
-                                colors: [
-                                  FlutterFlowTheme.of(context).primary,
-                                  FlutterFlowTheme.of(context).alternate
-                                ],
+                                colors: [Color(0xFF89D4CF), Color(0xFF734AE8)],
                                 stops: [0.0, 1.0],
                                 begin: AlignmentDirectional(1.0, -1.0),
                                 end: AlignmentDirectional(-1.0, 1.0),
@@ -429,10 +417,7 @@ class _DonationViewWidgetState extends State<DonationViewWidget> {
                                 )
                               ],
                               gradient: LinearGradient(
-                                colors: [
-                                  FlutterFlowTheme.of(context).primary,
-                                  FlutterFlowTheme.of(context).alternate
-                                ],
+                                colors: [Color(0xFF89D4CF), Color(0xFF734AE8)],
                                 stops: [0.0, 1.0],
                                 begin: AlignmentDirectional(1.0, -1.0),
                                 end: AlignmentDirectional(-1.0, 1.0),
@@ -516,10 +501,7 @@ class _DonationViewWidgetState extends State<DonationViewWidget> {
                                 )
                               ],
                               gradient: LinearGradient(
-                                colors: [
-                                  FlutterFlowTheme.of(context).primary,
-                                  FlutterFlowTheme.of(context).alternate
-                                ],
+                                colors: [Color(0xFF89D4CF), Color(0xFF734AE8)],
                                 stops: [0.0, 1.0],
                                 begin: AlignmentDirectional(1.0, -1.0),
                                 end: AlignmentDirectional(-1.0, 1.0),
