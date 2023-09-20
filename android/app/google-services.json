@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "807415246507",
+    "project_id": "foodconnect-hackbattle",
+    "storage_bucket": "foodconnect-hackbattle.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807415246507:android:8be197eb2678c07e2811ee",
+        "android_client_info": {
+          "package_name": "com.inbo.foodconnect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaocS70ydbbVgDwPWZwolUmYyr8PxcP7U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
