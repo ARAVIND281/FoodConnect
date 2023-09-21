@@ -1,8 +1,10 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -624,33 +626,132 @@ class _MessageDetailsWidgetState extends State<MessageDetailsWidget> {
                   ),
                 ),
               ),
-              Align(
-                alignment: AlignmentDirectional(0.00, 0.00),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
-                  child: FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
-                    },
-                    text: 'Accept!',
-                    options: FFButtonOptions(
-                      width: 140.0,
-                      height: 50.0,
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                      iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
-                      textStyle: FlutterFlowTheme.of(context).titleSmall,
-                      elevation: 3.0,
-                      borderSide: BorderSide(
-                        color: Colors.transparent,
-                        width: 1.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                  ),
-                ),
+              Builder(
+                builder: (context) {
+                  if (valueOrDefault(currentUserDocument?.type, '') ==
+                      'Donor') {
+                    return Builder(
+                      builder: (context) {
+                        if (widget.data?.status == 'updated') {
+                          return FFButtonWidget(
+                            onPressed: () async {
+                              await widget.data!.reference
+                                  .update(createDonationRecordData(
+                                status: 'completed',
+                                visible: false,
+                              ));
+                              Navigator.pop(context);
+                              await showDialog(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('Food Received'),
+                                    content: Text(
+                                        'Food Received Ststus has been updateed'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            },
+                            text: 'Food Recived',
+                            options: FFButtonOptions(
+                              height: 40.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  24.0, 0.0, 24.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.white,
+                                  ),
+                              elevation: 3.0,
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          );
+                        } else {
+                          return Container(
+                            width: 100.0,
+                            height: 0.0,
+                            decoration: BoxDecoration(
+                              color: Color(0x0014181B),
+                            ),
+                          );
+                        }
+                      },
+                    );
+                  } else {
+                    return Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional(0.00, 0.00),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 30.0),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                await widget.data!.reference
+                                    .update(createDonationRecordData(
+                                  status: 'Accepted',
+                                  recipientUid: currentUserUid,
+                                ));
+                                Navigator.pop(context);
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: Text('Status Updated'),
+                                      content: Text(
+                                          'The Status of Donation is Updated'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                              text: 'Accept!',
+                              options: FFButtonOptions(
+                                width: 140.0,
+                                height: 50.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 0.0, 24.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).primary,
+                                textStyle:
+                                    FlutterFlowTheme.of(context).titleSmall,
+                                elevation: 3.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  }
+                },
               ),
             ],
           ),

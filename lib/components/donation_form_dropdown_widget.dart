@@ -642,10 +642,11 @@ class _DonationFormDropdownWidgetState extends State<DonationFormDropdownWidget>
                                     '.',
                                   ),
                                   name: _model.donationNameController.text,
-                                  dateNeedBack: _model.datePicked?.toString(),
+                                  dateNeedBack: _model.datePicked,
                                   donerUid: currentUserUid,
                                   donerEmail: currentUserEmail,
                                   date: getCurrentTimestamp,
+                                  visible: true,
                                 ));
                             Navigator.pop(context);
                             await showDialog(

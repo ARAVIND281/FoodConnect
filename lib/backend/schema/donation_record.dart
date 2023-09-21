@@ -66,11 +66,6 @@ class DonationRecord extends FirestoreRecord {
   String get name => _name ?? '';
   bool hasName() => _name != null;
 
-  // "dateNeedBack" field.
-  String? _dateNeedBack;
-  String get dateNeedBack => _dateNeedBack ?? '';
-  bool hasDateNeedBack() => _dateNeedBack != null;
-
   // "donerUid" field.
   String? _donerUid;
   String get donerUid => _donerUid ?? '';
@@ -91,6 +86,11 @@ class DonationRecord extends FirestoreRecord {
   String get donerEmail => _donerEmail ?? '';
   bool hasDonerEmail() => _donerEmail != null;
 
+  // "dateNeedBack" field.
+  DateTime? _dateNeedBack;
+  DateTime? get dateNeedBack => _dateNeedBack;
+  bool hasDateNeedBack() => _dateNeedBack != null;
+
   void _initializeFields() {
     _date = snapshotData['date'] as DateTime?;
     _people = castToType<int>(snapshotData['people']);
@@ -102,11 +102,11 @@ class DonationRecord extends FirestoreRecord {
     _phone = snapshotData['phone'] as String?;
     _dateNeeded = snapshotData['dateNeeded'] as String?;
     _name = snapshotData['name'] as String?;
-    _dateNeedBack = snapshotData['dateNeedBack'] as String?;
     _donerUid = snapshotData['donerUid'] as String?;
     _recipientUid = snapshotData['recipientUid'] as String?;
     _visible = snapshotData['visible'] as bool?;
     _donerEmail = snapshotData['donerEmail'] as String?;
+    _dateNeedBack = snapshotData['dateNeedBack'] as DateTime?;
   }
 
   static CollectionReference get collection =>
@@ -154,11 +154,11 @@ Map<String, dynamic> createDonationRecordData({
   String? phone,
   String? dateNeeded,
   String? name,
-  String? dateNeedBack,
   String? donerUid,
   String? recipientUid,
   bool? visible,
   String? donerEmail,
+  DateTime? dateNeedBack,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -172,11 +172,11 @@ Map<String, dynamic> createDonationRecordData({
       'phone': phone,
       'dateNeeded': dateNeeded,
       'name': name,
-      'dateNeedBack': dateNeedBack,
       'donerUid': donerUid,
       'recipientUid': recipientUid,
       'visible': visible,
       'donerEmail': donerEmail,
+      'dateNeedBack': dateNeedBack,
     }.withoutNulls,
   );
 
@@ -198,11 +198,11 @@ class DonationRecordDocumentEquality implements Equality<DonationRecord> {
         e1?.phone == e2?.phone &&
         e1?.dateNeeded == e2?.dateNeeded &&
         e1?.name == e2?.name &&
-        e1?.dateNeedBack == e2?.dateNeedBack &&
         e1?.donerUid == e2?.donerUid &&
         e1?.recipientUid == e2?.recipientUid &&
         e1?.visible == e2?.visible &&
-        e1?.donerEmail == e2?.donerEmail;
+        e1?.donerEmail == e2?.donerEmail &&
+        e1?.dateNeedBack == e2?.dateNeedBack;
   }
 
   @override
@@ -217,11 +217,11 @@ class DonationRecordDocumentEquality implements Equality<DonationRecord> {
         e?.phone,
         e?.dateNeeded,
         e?.name,
-        e?.dateNeedBack,
         e?.donerUid,
         e?.recipientUid,
         e?.visible,
-        e?.donerEmail
+        e?.donerEmail,
+        e?.dateNeedBack
       ]);
 
   @override
